@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        body,div{
+            margin: 0;
+            padding: 0;
+        }
+        #orgin{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: 20px 20px 0 20px;
+            position: relative;
+        }
+        #orgin img{
+            width: 300px;
+            height: 300px;
+        }
+        #move{
+            /*width: 100px;
+            height: 100px;*/
+            background-color: #FF0;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            cursor: move;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #bigger{
+            position: absolute;
+            left: 400px;
+            top: 20px;
+            display: none;
+            overflow: hidden;
+            /*width: 200px;
+            height: 200px;*/
+        }
+        #bigger img{
+            /*大图宽度/bigger = orgin/move*/
+            width: 900px;
+            height: 900px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="orgin">
+    <img src="an.jpg" alt="么女">
+    <div id="move" style="width: 100px;height: 100px"></div>
+</div>
+<div id="bigger" style="width: 300px;height: 300px;">
+    <img src="an.jpg" alt="大么女">
+</div>
+<script>
+    var orgin = document.getElementById("orgin");
+    var move = document.getElementById("move");
+    var bigger = document.getElementById("bigger");
+    var bigImage = document.getElementById("bigger").children[0];
+    //当元素display：none时，获取到的clientWidth是0；
+    var movewidth = parseInt(move.style.width);//小黄快宽度
+    var moveheight = parseInt(move.style.height);//小黄块高度
+    var maxx = orgin.clientWidth - movewidth;//小黄块最大left
+    var maxy = orgin.clientHeight - moveheight;//小黄块最大top
+
+    //放大比例
+    var scale = parseInt(bigger.style.width)/movewidth;
+    //1.鼠标移到原始图上，小黄块出来
+    orgin.onmouseenter = function () {
+        move.style.display = "block";
+        bigger.style.display = "block";
+    };
+    orgin.onmouseleave = function () {
+        move.style.display = "none";
+        bigger.style.display = "none";
+    };
+    //2.给小黄块添加移动事件
+    orgin.onmousemove = function (evt) {
+        var event = evt || window.event;
+        var movex = event.clientX - orgin.offsetLeft - move.clientWidth/2;
+        var movey = event.clientY - orgin.offsetTop - move.clientWidth/2;
+        if(movex<0){
+            movex = 0;
+        }
+        if(movex>maxx){
+            movex=maxx;
+        }
+        if(movey<0){
+            movey=0;
+        }
+        if(movey>maxy){
+            movey=maxy;
+        }
+        move.style.left = movex + "px";
+        move.style.top = movey + "px";
+        //大图:和小图移动方向相反
+        bigImage.style.left = -movex*scale + "px";
+        bigImage.style.top = -movey*scale + "px";
+    };
+
+    //补充：
+    //如果想要bigger更大一些，可以修改，但是bigImage也要修改
+    //保持如下：orgin/move = bigImage/bigger
+    //把orgin/move可以变成 1/3；
+</script>
+</body>
+</html>

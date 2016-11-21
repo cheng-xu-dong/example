@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        em{
+            font-style: normal;
+        }
+        #wrap{
+            width: 1210px;
+            height: 578px;
+            text-align: center;
+            margin: 200px auto;
+        }
+        #header{
+            width: 1210px;
+            height: 37px;
+            border-bottom: 1px solid #F00;
+        }
+        #header ul{
+            width: 650px;
+            height: 35px;
+            float: right;
+        }
+        #header ul li{
+            float: left;
+            line-height: 34px;
+            background: url("shu.jpg") no-repeat right center;
+        }
+        #header li a{
+            display: block;
+            font-size: 12px;
+            color: #666;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 16px;
+            border: 1px solid #6c6c6c;
+            border-bottom: 0;
+            border-right: 0;
+            border-left: 0;
+        }
+        ul #li1 a{
+            border-left: 1px solid #6c6c6c;
+        }
+        ul #li8 a{
+            border-right: 1px solid #6c6c6c;
+        }
+        #header ul .hover a{
+            border: 1px solid #F00;
+            border-top: 3px solid  #F00;
+            border-bottom: 1px solid #fff;
+            height: 34px;
+        }
+        #box div{
+            display: none;
+        }
+        #box div{
+            height: 539px;
+            position: absolute;
+        }
+        #box div ul{
+            float: left;
+            width: 199px;
+            height: 236px;
+        }
+        #box div ul li{
+            width: 165px;
+            height: 230px;
+            padding: 6px 17px 0 17px;
+        }
+        #box div ul li img{
+            padding: 20px 17px 5px 17px;
+        }
+        #box div ul li a{
+            display: block;
+            font-size: 13px;
+            line-height: 20px;
+            color: #666;
+            text-align: left;
+            padding-bottom: 10px;
+        }
+        #box div ul li span{
+            display: block;
+            color: #F00;
+            text-align: left;
+        }
+        #box div .pic{
+            float: left;
+        }
+        #banner{
+            width: 35px;
+            height: 216px;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            margin-top: -108px;
+        }
+        /*#banner1{
+            width: 135px;
+            height: 35px;
+        }*/
+        #banner i{
+            /*margin-left: 100px;*/
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #666;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #banner i img{
+            margin-left: 9px;
+            margin-top: 9px;
+        }
+        #banner div{
+            position: relative;
+        }
+        #banner em{
+            position: absolute;
+            right: 100px;
+            top: 0;
+            width: 100px;
+            height: 35px;
+            background: #F00;
+            text-align: center;
+            border-radius: 8px;
+            display: none;
+        }
+        #banner em a{
+            font-size: 12px;
+            color: #fff;
+            line-height: 35px;
+        }
+        #banner .i1{
+            background: #F00;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+      <ul>
+          <li id="li1" class="hover"><a href="javascript:;">国际大牌</a></li>
+          <li><a href="javascript:;">国妆名品</a></li>
+          <li><a href="javascript:;">个人护理</a></li>
+          <li><a href="javascript:;">清洁用品</a></li>
+          <li><a href="javascript:;">纸品湿巾</a></li>
+          <li><a href="javascript:;">香水彩妆</a></li>
+          <li><a href="javascript:;">热销面膜</a></li>
+          <li id="li8"><a href="javascript:;">男士精品</a></li>
+      </ul>
+    </div>
+    <div id="box">
+      <div>
+          <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+          <ul>
+              <li><img src="1.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="2.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="3.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="4.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="5.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="6.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="7.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="8.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="9.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+          <ul>
+              <li><img src="10.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+          </ul>
+      </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="11.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="12.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="13.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="14.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="15.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="16.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="17.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="18.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="19.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="20.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="1.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="2.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="3.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="4.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="5.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="6.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="7.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="8.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="9.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="10.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="11.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="12.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="13.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="14.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="15.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="16.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="17.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="18.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="19.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="20.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="1.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="2.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="3.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="4.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="5.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="6.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="7.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="8.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="9.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="10.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="11.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="12.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="13.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="14.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="15.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="16.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="17.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="18.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="19.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="20.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="1.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="2.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="3.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="4.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="5.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="6.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="7.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="8.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="9.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="10.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+      <div>
+            <img class="pic" src="http://img11.360buyimg.com/da/jfs/t3187/361/1167790456/25951/34085d61/57c78597N59d39188.jpg">
+            <ul>
+                <li><img src="11.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="12.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="13.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="14.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="15.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="16.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="17.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="18.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="19.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+            <ul>
+                <li><img src="20.jpg"><a href="javascript;;">妞娃(NEWA)家用射频美容仪 以色列进口 3DEEP射频 RF</a><span>￥2950.00</span></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="banner">
+    <div id="banner1">
+        <i><img src="1.png"></i>
+        <em><a href="javascript:;">京东会员</a></em>
+    </div>
+    <div id="banner2">
+        <i><img src="2.png"></i>
+        <em><a href="javascript:;">购物车</a></em>
+    </div>
+    <div id="banner3">
+        <i><img src="3.png"></i>
+        <em><a href="javascript:;">我的关注</a></em>
+    </div>
+    <div id="banner4">
+        <i><img src="4.png"></i>
+        <em><a href="javascript:;">我的足迹</a></em>
+    </div>
+    <div id="banner5">
+        <i><img src="5.png"></i>
+        <em><a href="javascript:;">我的消息</a></em>
+    </div>
+    <div id="banner6">
+        <i><img src="6.png"></i>
+        <em><a href="javascript:;">咨询JIMI</a></em>
+    </div>
+</div>
+<script src="bufferMove.js"></script>
+<script>
+    var
+            header = $("header"),
+            box = $("box"),
+            oList = byTagName(header,"li"),
+            sBox = byTagName(box,"div");
+
+    sBox[0].style.display = "block";
+
+    for(var i = 0 ; i < oList.length ; i++){
+        oList[i].index = i;
+        oList[i].onmouseover = function () {
+            sBox[this.index].style.display = "block";
+            for(var j = 0 ; j < oList.length ; j++){
+                if(j != this.index) {
+                    sBox[j].style.display = "none";
+                }
+                oList[j].className = " ";
+            }
+            oList[this.index].className = "hover";
+        }
+    }
+
+    //通过ID获取DOM对象
+    function $(id){
+        return document.getElementById(id);
+    }
+
+    //通过TagName获取DOM对象
+    function byTagName(obj,sTagName){
+        return obj.getElementsByTagName(sTagName);
+    }
+
+
+
+
+
+    var 
+            banner = $("banner"),
+            aList = byTagName(banner,"i"),
+            aEm = byTagName(banner,"em");
+
+    for(var p = 0 ; p < aList.length ; p++) {
+        aList[p].index = p;
+        aList[p].onmouseover = function () {
+              for(var k = 0; k < aList.length; k++){
+                  if(k != this.index){
+                      aEm[this.index].style.right = "100" + "px";
+                  }
+                  aEm[k].style.display = "none";
+                  aList[k].className = "";
+              }
+            aEm[this.index].style.display = "block";
+            bufferMove(aEm[this.index],{right : 35});
+            aList[this.index].className = "i1";
+        };
+        aList[p].onmouseleave = function () {
+            aList[this.index].className = " ";
+            aEm[this.index].style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

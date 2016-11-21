@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D动画</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	:root {
+		background: #000;
+		overflow: hidden;
+	}
+	#stage {
+		position: relative;
+		margin: 300px auto;
+		width: 133px;
+		height: 200px;
+		/*border: 1px solid red;*/
+		transform-style: preserve-3d;
+		transform: perspective(800px) rotateX(-30deg);
+	}
+	#stage img {
+		position: absolute;
+		-webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, .7) 70%, rgba(255, 255, 255, .9));
+	}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<img src="images/1.jpg" alt="">
+		<img src="images/2.jpg" alt="">
+		<img src="images/3.jpg" alt="">
+		<img src="images/4.jpg" alt="">
+		<img src="images/5.jpg" alt="">
+		<img src="images/6.jpg" alt="">
+		<img src="images/7.jpg" alt="">
+		<img src="images/8.jpg" alt="">
+		<img src="images/9.jpg" alt="">
+		<img src="images/10.jpg" alt="">
+		<img src="images/11.jpg" alt="">
+	</div>
+	<script type="text/javascript">
+		var
+			oStage = document.getElementById('stage'),
+			aImg = oStage.children,
+			iPerDeg = 360 / aImg.length;
+
+		for(var i =0; i < aImg.length; i++) {
+			aImg[i].style.transform = 'rotateY(' + i * iPerDeg + 'deg) translateZ(300px)';
+		}
+
+		var
+			iRotateX = 0,
+			iRotateY = 0;
+		// 添加拖拽事件
+		document.onmousedown = function (ev) {
+			var
+				ev = ev || window.event,
+				iStartX = ev.clientX,
+				iStartY = ev.clientY;
+			document.onmousemove = function (ev) {
+				var
+					ev = ev || window.event,
+					iEndX = ev.clientX,
+					iEndY = ev.clientY,
+
+					iX = iEndX - iStartX,
+					iY = iEndY - iStartY;
+
+				iRotateX += iX * 0.1;
+				iRotateY -= iY * 0.2;
+				oStage.style.transform = 'perspective(800px) rotateX(-30deg) rotateX(' + iRotateY +'deg) rotateY(' + iRotateX + 'deg)';
+
+				iStartX = iEndX;
+				iStartY = iEndY;
+			};
+			document.onmouseup = function () {
+				document.onmousemove = null;
+				document.onmouseup = null;
+			};
+
+			return false;
+		}
+	</script>
+</body>
+</html>

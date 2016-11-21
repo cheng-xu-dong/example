@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ccc;
+}
+ul {
+	list-style: none;
+}
+img{
+	vertical-align: bottom;
+}
+#box {
+	position: relative;
+	width: 1100px;
+	height: 300px;
+	overflow: hidden;
+	border: 5px solid #fff;
+}
+#box li {
+	position: absolute;
+}
+/* #box li:nth-child(1) {
+	left:0;
+}
+#box li:nth-child(2) {
+	left:600px;
+}
+#box li:nth-child(3) {
+	left:700px;
+}
+#box li:nth-child(4) {
+	left:800px;
+}
+#box li:nth-child(5) {
+	left:900px;
+}
+#box li:nth-child(6) {
+	left:1000px;
+} */
+#box img{
+	width: 600px;
+}
+/*
+	* 布局分析
+	* 第一 left 0 ，第二 500 + 1 * 100 第三 500+2*100 第四 800 第五 900 第六 1000
+*/

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业2</title>
+    <style>
+        li{list-style:none}
+        a{text-decoration:none}
+        img{border:none}
+
+        ul{width:135px;height:28px;margin:400px auto}
+        li{float:left;height:40px}
+        li{width:27px;height:28px;background:url(star.gif) no-repeat}
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<script>
+    var list=document.getElementsByTagName("li");
+    for(var i= 0,len=list.length;i<len;i++){
+        list[i].index=i;
+        list[i].onmouseenter= function () {
+            for(var j=0;j<=list.length;j++){
+              if(j<=this.index){
+                  list[j].style.backgroundPosition="0 -28px";
+              }else{
+                  list[j].style.backgroundPosition="0 0px";
+              }
+            }
+        };
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

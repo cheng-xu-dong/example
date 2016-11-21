@@ -1,0 +1,127 @@
+.panel {
+    position: absolute;
+    left: 30%;
+    top:5%;
+    width: 600px;
+    height: 650px;
+    background: rgb(51,51,51);
+}
+
+.panel .drag{
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #0000ff;
+}
+.panel .body{
+    position: relative;
+}
+.errMsg {
+    position: absolute;
+    padding: 3px 6px;
+    background: #f8e751;
+    left: 260px;
+    opacity : 0;
+    filter : alpha(opacity = 0);
+}
+.body .waring{
+    margin: 10px 10px;
+    left: 18px;
+    top:8px;
+    color: #fec517;
+}
+.notice{
+    color: red;
+}
+
+.info-title {
+    margin: 0 60px;
+    color: #0000ff;
+    font-size: 18px;
+}
+.table-detail{
+    margin: 10px auto;
+    width: 380px;
+}
+.table-detail td {
+    padding-top: 18px ;
+}
+.table-detail .td-word {
+    text-align: left;
+    color: #bbbbbb;
+    width: 140px;
+}
+.table-detail .td-element{
+    position: relative;
+    width: 250px;
+}
+.table-detail .td-element input{
+    margin-left: 10px;
+    width: 200px;
+    background: rgb(153, 153, 153);
+}
+.table-detail .td-element .code-input{
+    width: 90px;
+}
+.safe-notice{
+    float: left;
+}
+.safe-warp{
+    float: left;
+    height: 20px;
+    left: 10px;
+    position: relative;
+    width: 142px;
+    background: #f0fcff;
+    overflow: hidden;
+}
+.safe-warp .active {
+    width: 34%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    background: red;
+}
+.second-part {
+    margin-top: 30px;
+}
+.random-code{
+    background: #f0fcff none repeat scroll 0 0;
+    float: right;
+    height: 24px;
+    margin-right: 25px;
+    width: 80px;
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+}
+.btn {
+    background: #00b0e8;
+    width: 80px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #f0fcff;
+    text-align: center;
+    cursor: pointer;
+}
+.td-element .btn{
+    float: left;
+    margin-left: 15px;
+    border-radius: 6px;
+}
+.checkbox-warp {
+    color: #f0fcff;
+    float: left;
+    width: 134px;
+}
+.table-detail .td-element .checkbox-ele{
+    width: 13px;
+    margin-left: 15px;
+    float: left;
+    border: none;
+}
+.checkbox-warp div {
+    float: left;
+    width: 100px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="register.css" rel="stylesheet">
+</head>
+<body>
+    <div id="panel" class="panel">
+        <div id="drag" class="drag"></div>
+        <div class="body" id="register">
+            <div id="errMsg" class="errMsg">用户名输入有误！</div>
+            <div class="waring">注意<span class="notice">*</span>为必填项</div>
+            <div class="info-title">用户详细资料</div>
+            <table class="table-detail">
+                <tr>
+                    <td class="td-word">用户名称</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="account" placeholder="字母、数字、下划线"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">登录密码</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="pwd" placeholder="6-20位"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">重复登录密码</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="rePwd"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">密码安全级别</td>
+                    <td class="td-element">
+                        <span class="notice safe-notice">*</span>
+                        <div class="safe-warp">
+                            <div id="safe-active" class="active">低</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="info-title second-part">用户详细资料</div>
+            <table class="table-detail">
+                <tr>
+                    <td class="td-word">电子邮件</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="email" placeholder="如：zhangsan@qq.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">真实姓名</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="realName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">中奖手机</td>
+                    <td class="td-element">
+                        <span class="notice">*</span><input id="mobile" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word">验证码</td>
+                    <td class="td-element">
+                        <span class="notice safe-notice">*</span>
+                        <input class="code-input" id="code_input" />
+                        <div class="random-code" id="random_code"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-word"></td>
+                    <td class="td-element">
+                        <div class="btn" id="reg_btn">注册</div>
+                        <div class="checkbox-warp">
+                            <input type="checkbox" id="remember" class="checkbox-ele"/>
+                            <div >10天内免登录</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="register.js"></script>

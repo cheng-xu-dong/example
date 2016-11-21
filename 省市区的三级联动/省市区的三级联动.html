@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区三级联动</title>
+</head>
+<body>
+<select id="province">
+    <option>请选择省</option>
+</select>
+<select id="city">
+    <option>请选择市</option>
+</select>
+<select id="region">
+    <option>请选择区（县）</option>
+</select>
+
+
+
+<script type="text/javascript">
+    var oPrivince = document.getElementById("province");
+    var oCity = document.getElementById("city");
+    var oRegion = document.getElementById("region");
+    oCity.disabled = true;
+    oRegion.disabled = true;
+    var province = [
+        {'id':'1','name':'北京'},        //一级联动用数组存储，每一项都是json，加上id
+        {'id':'2','name':'上海'},
+        {'id':'3','name':'天津'},
+        {'id':'4','name':'河北'},
+        {'id':'5','name':'山东'},
+        {'id':'6','name':'广东'}
+    ];
+    var str1 = '';
+    for(var i = 0;i<province.length;i++)
+    {
+        var proArr = province[i];
+        str1 += '<option value='+proArr.id+'>'+proArr.name+'</option>'
+    }
+    oPrivince.innerHTML += str1;
+    var city = {
+        "1":['101#北京'],                         //二级联动用json存储，属性对应一级联动的id
+        "2":['201#上海'],
+        "3":['301#天津'],
+        "4":['401#石家庄','402#保定','403#沧州','404#秦皇岛','405#邢台','406#唐山'],
+        "5":['501#济南','502#青岛','503#烟台','504#菏泽','505#威海','506#莱阳','507#济宁'],
+        "6":['601#广州','602#汕头','603#深圳','604#东莞','605#珠海','606#佛山','607#南海']
+    };
+    oPrivince.onchange = function(){                    //一级联动内容发生变动时触发
+        oCity.innerHTML = '<option>请选择市</option>'
+        oCity.disabled = false;
+        oRegion.innerHTML = '<option>请选择区（县）</option>'
+        oRegion.disabled = true;
+        var str2 ='';
+        var value1 = this.value;
+        var cityArr = city[value1];              //根据一级联动的value值，来匹配二级联动里的json的属性，将对应的属性值存到数组中
+        console.log(value1);
+        //对数组的每一项分割，取出想要的内容，加入到二级联动列表中
+        for(var i = 0;i<cityArr.length;i++)
+        {
+            var citySp = cityArr[i].split('#');
+            str2 += '<option value='+citySp[0]+'>'+citySp[1]+'</option>';
+        }
+        oCity.innerHTML += str2;
+    }
+    //三级联动和二级联动存储相同
+    var region = {  "101":['朝阳区','海淀区','昌平区','大兴区','怀柔区','石景山区'],
+        "201":['上海1','上海2','上海3','上海4','上海5','上海6','上海7','上海8'],
+        "301":['天津1','天津2','天津3','天津4','天津5','天津6','天津7','天津8'],
+        "401":['石家庄1','石家庄2','石家庄3','石家庄4','石家庄5','石家庄6','石家庄7','石家庄8'],
+        "402":['保定1','保定2','保定3','保定4','保定5','保定6','保定7','保定8'],
+        "403":['沧州1','沧州2','沧州3','沧州4','沧州5','沧州6','沧州7','沧州8'],
+        "404":['秦皇岛1','秦皇岛2','秦皇岛3','秦皇岛4','秦皇岛5','秦皇岛6','秦皇岛7','秦皇岛8'],
+        "405":['邢台1','邢台2','邢台3','邢台4','邢台5','邢台6','邢台7','邢台8'],
+        "406":['唐山1','唐山2','唐山3','唐山4','唐山5','唐山6','唐山7','唐山8'],
+        "501":['济南1','济南2','济南3','济南4','济南5','济南6','济南7','济南8'],
+        "502":['青岛1','青岛2','青岛3','青岛4','青岛5','青岛6','青岛7','青岛8'],
+        "503":['烟台1','烟台2','烟台3','烟台4','烟台5','烟台6','烟台7','烟台8'],
+        "504":['菏泽1','菏泽2','菏泽3','菏泽4','菏泽5','菏泽6','菏泽7','菏泽8'],
+        "505":['威海1','威海2','威海3','威海4','威海5','威海6','威海7','威海8'],
+        "506":['莱阳1','莱阳2','莱阳3','莱阳4','莱阳5','莱阳6','莱阳7','莱阳8'],
+        "507":['济宁1','济宁2','济宁3','济宁4','济宁5','济宁6','济宁7','济宁8'],
+        "601":['广州1','广州2','广州3','广州4','广州5','广州6','广州7','广州8'],
+        "602":['汕头1','汕头2','汕头3','汕头4','汕头5','汕头6','汕头7','汕头8'],
+        "603":['深圳1','深圳2','深圳3','深圳4','深圳5','深圳6','深圳7','深圳8'],
+        "604":['东莞1','东莞2','东莞3','东莞4','东莞5','东莞6','东莞7','东莞8'],
+        "605":['珠海1','珠海2','珠海3','珠海4','珠海5','珠海6','珠海7','珠海8'],
+        "606":['佛山1','佛山2','佛山3','佛山4','佛山5','佛山6','佛山7','佛山8'],
+        "607":['南海1','南海2','南海3','南海4','南海5','南海6','南海7','南海8'],}
+    oCity.onchange = function(){
+        oRegion.innerHTML = '<option>请选择区（县）</option>'
+        oRegion.disabled = false;
+        var str3 = '';
+        value2 = this.value;
+        var regionArr = region[value2];
+        for(var i = 0 ;i<regionArr.length;i++)
+        {
+            str3 += '<option>'+regionArr[i]+'</option>'
+        }
+        oRegion.innerHTML += str3;
+    }
+</script>
+</body>
+</html>

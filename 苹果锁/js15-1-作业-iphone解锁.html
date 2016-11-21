@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,div {
+            margin: 0;
+            padding: 0;
+        }
+        #phone {
+            width: 426px;
+            height: 640px;
+            margin: 10px auto;
+            background: url(images/iphone.jpg);
+            position: relative;
+        }
+        #lock {
+            width: 360px;
+            height: 62px;
+            position: absolute;
+            left: 50%;
+            margin-left: -180px;
+            bottom: 32px;
+            /*border: 1px solid #FF0;*/
+        }
+        #arrow {
+            height: 62px;
+            width: 93px;
+            float: left;
+            background: url(images/unlock_btn.jpg);
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--<audio src="images/kanon.mp3" autoplay></audio>-->
+    <div id="phone">
+        <div id="lock">
+            <span id="arrow"></span>
+        </div>
+    </div>
+    <script>
+        var arrow = document.getElementById("arrow");
+        var lock = document.getElementById("lock");
+        var phone = document.getElementById("phone");
+        var maxx = lock.clientWidth - arrow.clientWidth; //箭头left最大值
+
+        arrow.onmousedown = function (evt) {
+            var event= evt || window.event;
+            var pointX = event.clientX - lock.offsetLeft - phone.offsetLeft;
+            /*console.log(pointX);
+            console.log(event.offsetX);*/
+            document.onmousemove = function (evt2) {
+                var event2 = evt2 || window.event;
+                var x = event2.clientX - lock.offsetLeft - phone.offsetLeft - pointX;
+                if(x<0) {
+                    x = 0;
+                }
+                if(x>maxx) {
+                    x = maxx;
+                }
+                arrow.style.left = x + "px";
+
+            };
+            //检测鼠标松开
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                //检测位置
+                if(arrow.offsetLeft<maxx/2) {//未到中央位置
+                    arrow.style.left = 0;
+                }
+                else {
+                    arrow.style.left = maxx + "px";
+                    //延迟进入解锁
+                    setTimeout(function () {
+                        lock.style.display = "none";//隐藏滑动条
+                        phone.style.background = "url(images/iphone2.jpg)";
+                        var music = document.createElement("audio");
+                        music.src = "images/kanon.mp3";
+                        music.autoplay = true;
+                        document.body.appendChild(music);
+                    },100)
+                }
+            };
+        };
+    </script>
+</body>
+</html>
